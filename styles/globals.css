@@ -556,8 +556,14 @@ section {
   justify-content: center;
   margin: 10px;
   gap: 10px;
+  cursor: pointer;
   
 
+}
+
+.emptyTask{
+  width: 100%;
+  min-height: 10px;
 }
 
 .task svg{

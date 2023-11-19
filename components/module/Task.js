@@ -12,7 +12,7 @@ import notify from '@/function/toaster'
 import { ToastContainer } from 'react-toastify'
  
 
-const Task = ({data , next , back , fetchtodos}) => {
+const Task = ({data , next , back , fetchtodos , currentStatus}) => {
 
   const [edit , setEdit] = useState("")
   const [title , setTitle] = useState("")
@@ -48,9 +48,6 @@ const Task = ({data , next , back , fetchtodos}) => {
       const data = await res.json()
       if(data.status == 200) {
         fetchtodos()
-        notify(data.data.message , "success")
-      }else{
-        notify(data.data.message)
       }
     }
 
@@ -66,12 +63,23 @@ const Task = ({data , next , back , fetchtodos}) => {
      
     },[])
     
+    const dragStartHandler = (e , ID , status)=>{
+       e.dataTransfer.setData('task' ,ID )
+    }
+
+   
+   
     return (
-      <> 
         <div className='task'>
-        {data?.map((item , index)=> (<div  className='innertask' key={item._id}>
+        
+        {data?.map((item , index)=> (
+          <div 
+          onDragStart={(e)=> dragStartHandler(e ,item._id , item.status)} 
+          className='innertask' key={item._id}
+          draggable 
+        
+          >
                 <span  className={item.status}> </span>
-               
                 <h4 >
                   {item.status ==="done" ? <MdOutlineDoneAll/> :<BiLoaderCircle/>} 
                   
@@ -95,8 +103,8 @@ const Task = ({data , next , back , fetchtodos}) => {
         </div>))}
         
         </div>
-        <ToastContainer/>
-        </>
+       
+        
     );
 };
 
