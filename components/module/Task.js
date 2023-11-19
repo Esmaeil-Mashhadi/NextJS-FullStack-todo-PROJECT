@@ -71,7 +71,7 @@ const Task = ({data , next , back , fetchtodos , currentStatus}) => {
    
     return (
         <div className='task'>
-        
+
         {data?.map((item , index)=> (
           <div 
           onDragStart={(e)=> dragStartHandler(e ,item._id , item.status)} 
@@ -90,6 +90,7 @@ const Task = ({data , next , back , fetchtodos , currentStatus}) => {
 
                      }
                      <span onClick={()=> editHandler(item._id ,item.title )} className='edit-icon'><AiFillEdit/></span> 
+                     <span className='edit-text'>edit task</span>
                   </h4>
 
 

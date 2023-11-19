@@ -943,6 +943,9 @@ background-color: white
   font-size: 10px !important;
   transition: .5s;
   opacity: 0;
+  color: black;
+  letter-spacing: 1px;
+  
 }
 
 
