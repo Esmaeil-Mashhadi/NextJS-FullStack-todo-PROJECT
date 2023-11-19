@@ -997,7 +997,7 @@ background-color: white
  }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1300px) {
   .home-page{
     display: grid;
     grid-template-columns: repeat(2 ,1fr);
@@ -1125,7 +1125,7 @@ white-space: nowrap;
   right: 80px;
   top: 220px;
   scale: 1.8;
-  z-index: 0;
+  z-index: 1;
   cursor: pointer;
   transition: ease-in-out .5s;
   
@@ -1136,7 +1136,7 @@ white-space: nowrap;
   right: 80px;
   top: 220px;
   scale: 1.8;
-  z-index: 0;
+  z-index: 1;
   cursor: pointer;
   transition: ease-in-out .5s;
  }
@@ -1198,7 +1198,7 @@ white-space: nowrap;
     right: 70px;
     top: 220px;
     scale: 2;
-    z-index: 0;
+    z-index: 1;
     cursor: pointer;
     transition: ease-in-out .5s;
     
@@ -1209,7 +1209,7 @@ white-space: nowrap;
     right: 70px;
     top: 220px;
     scale: 1.8;
-    z-index: 0;
+    z-index: 1;
     cursor: pointer;
     transition: ease-in-out .5s;
    }
