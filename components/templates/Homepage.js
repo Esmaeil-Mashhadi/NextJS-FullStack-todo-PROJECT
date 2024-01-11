@@ -6,7 +6,6 @@ import patchTodos from '@/utils/patchTodos';
 
 const Homepage = () => {
 
-    
   const [ todos , setTodos] = useState([])
 
   const fetchTodos = async () => {
@@ -29,7 +28,6 @@ const Homepage = () => {
   const dropHandler = async(e , status)=>{
     const id = e.dataTransfer.getData('task')
     await patchTodos(id , status , "" , fetchTodos)
-   
   }
 
     return (
@@ -40,9 +38,9 @@ const Homepage = () => {
              <Task  data ={todos.todo}  fetchtodos = {fetchTodos}  next="inProgress" />
             </div>
 
-            <div   onDragOver={(e)=> e.preventDefault()} onDrop={(e)=>dropHandler(e , 'inProgress')}    className='home-page--inprogress'> 
+            <div   onDragOver={(e)=> e.preventDefault()} onDrop={(e)=>dropHandler(e , 'inProgress')}  className='home-page--inprogress'> 
             <p>in Progress</p>
-            <Task data ={todos.inProgress}   fetchtodos = {fetchTodos} next="review" back="todo"  />
+            <Task data ={todos.inProgress}  fetchtodos = {fetchTodos} next="review" back="todo"  />
             </div>
 
             <div   onDragOver={(e)=> e.preventDefault()} onDrop={(e)=>dropHandler(e , 'review')}   className='home-page--review'> 

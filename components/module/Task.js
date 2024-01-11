@@ -8,11 +8,9 @@ import {AiFillEdit} from 'react-icons/ai'
 
 import { useEffect, useState } from 'react'
 import patchTodos from '@/utils/patchTodos'
-import notify from '@/function/toaster'
-import { ToastContainer } from 'react-toastify'
- 
 
-const Task = ({data , next , back , fetchtodos , currentStatus}) => {
+ 
+const Task = ({data , next , back , fetchtodos }) => {
 
   const [edit , setEdit] = useState("")
   const [title , setTitle] = useState("")
@@ -63,7 +61,7 @@ const Task = ({data , next , back , fetchtodos , currentStatus}) => {
      
     },[])
     
-    const dragStartHandler = (e , ID , status)=>{
+    const dragStartHandler = (e , ID )=>{
        e.dataTransfer.setData('task' ,ID )
     }
 
@@ -74,7 +72,7 @@ const Task = ({data , next , back , fetchtodos , currentStatus}) => {
 
         {data?.map((item , index)=> (
           <div 
-          onDragStart={(e)=> dragStartHandler(e ,item._id , item.status)} 
+          onDragStart={(e)=> dragStartHandler(e ,item._id )} 
           className='innertask' key={item._id}
           draggable 
         
