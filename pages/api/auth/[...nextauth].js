@@ -24,7 +24,7 @@ const authOptions = {
 
         const user = await userModel.findOne({ email: email });
 
-        if (!user) throw new Error("userModel doesn't exist!");
+        if (!user) throw new Error("user doesn't exist!");
 
         const isValid = await verifyPassword(password, user.password);
 

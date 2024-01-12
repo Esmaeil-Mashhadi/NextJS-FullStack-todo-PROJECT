@@ -1,8 +1,6 @@
 import userModel from "../../../models/User"
 import { hashPassword } from "@/utils/auth"
 import connectDB from "@/utils/connectDB"
-import { serialize } from "cookie";
-import { sign } from "jsonwebtoken";
 
 
 async function handler(req, res){ 
