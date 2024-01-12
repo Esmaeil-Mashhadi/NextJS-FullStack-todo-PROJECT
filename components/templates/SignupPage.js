@@ -30,7 +30,7 @@ const SignupPage = () => {
 
         if(!Object.keys(error).length){ 
 
-          const res = await fetch("/api/auth/Signup", {
+          const res = await fetch("/api/register", {
           method: "POST",
           body: JSON.stringify({ email, password }),
           headers: { "Content-Type": "application/json" },

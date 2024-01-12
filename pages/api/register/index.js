@@ -32,15 +32,9 @@ async function handler(req, res){
         res.status(422).json({status:"failed" , message :"user Exist already"})
     }
 
-    const secretKey =process.env.secretKey
     const hashedPassword = await hashPassword(password)
-    const tokenizer = sign({email}, secretKey , {expiresIn : 24*60*60} )
-
-    const serialization = serialize("signToken" , tokenizer , {httpOnly : true , maxAge:24*60*60 , path :"/"})
 
     const newUser = await userModel.create({email : email , password : hashedPassword})
-    res.setHeader("set-Cookie" , serialization)
-    
     res.status(201).json({status:"successful" , messsage:"userCreated", data:newUser })
     
 }

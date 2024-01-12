@@ -19,7 +19,7 @@ async function handler(req, res) {
 
     const user = await userModel.findOne({email : session.user.email})
     if(!user){
-        res.status(404).json({status:"failed" , message:"userModel doesn't exist"})
+        res.status(404).json({status:"failed" , message:"user doesn't exist"})
     }
 
  if(req.method === "POST"){

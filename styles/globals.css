@@ -159,7 +159,6 @@ section {
   box-shadow: inset 0px 0px 10px black ;
   color: rgb(105, 200, 11);
   font-size: larger;
-  text-shadow: 0px 0px 10px black;
   transition: ease-in-out .5s;
 }
 
@@ -430,24 +429,37 @@ section {
 .home-page--todo{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 25%;
-  background-color: orange;
+  background-color:orange;
   border-radius: 5px;
   margin: 20px;
+  height: fit-content;
+  max-height: 750px;
   color: white;
   font-size: large;
   font-weight: bold;
   box-shadow:  10px 10px 10px black;
-  height: fit-content;
-
+  overflow: auto;
 }
 
+.home-page--todo::-webkit-scrollbar{
+  background-color:orange;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.home-page--todo::-webkit-scrollbar-thumb{
+  background-color: #e5e921;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
 .home-page--inprogress{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: fit-content;
+  max-height: 750px;
+  overflow: auto;
   width: 25%;
   background-color: rgb(3, 198, 97);
   border-radius: 3px;
@@ -459,15 +471,25 @@ section {
   font-size: large;
   font-weight: bold;
   box-shadow:  10px 10px 10px black;
-  height: fit-content;
-
-
 }
+
+.home-page--inprogress::-webkit-scrollbar{
+  background-color: rgb(3, 198, 97);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.home-page--inprogress::-webkit-scrollbar-thumb{
+  background-color: #92fc46;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 
 .home-page--review{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  overflow: auto;
   width: 25%;
   background-color: rgb(12, 84, 191);
   border-radius: 3px;
@@ -477,14 +499,26 @@ section {
   font-weight: bold;
   box-shadow:  10px 10px 10px black;
   height: fit-content;
+  max-height: 750px;
 
+}
 
+.home-page--review::-webkit-scrollbar{
+  background-color: rgb(12, 84, 191);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.home-page--review::-webkit-scrollbar-thumb{
+  background-color: #21e9e2;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 
 .home-page--done{
   display: flex;
-  justify-content: center;
+  overflow: auto;
   flex-direction: column;
   width: 25%;
   background-color: rgb(24, 205, 229);
@@ -495,8 +529,24 @@ section {
   font-weight: bold;
   box-shadow:  10px 10px 10px black;
   height: fit-content;
+  max-height: 750px;
+
 
 }
+
+.home-page--done::-webkit-scrollbar{
+  background-color: rgb(24, 205, 229);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.home-page--done::-webkit-scrollbar-thumb{
+  background-color: #bef3f2;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 
 .home-page--todo p{
   text-align: center;
@@ -576,7 +626,6 @@ section {
   align-items: center;
   gap: 7px;
   color: rgb(9, 9, 9);
-  text-shadow: 0px 0px 10px rgb(216, 202, 202);
   font-size: 15px;
 }
 

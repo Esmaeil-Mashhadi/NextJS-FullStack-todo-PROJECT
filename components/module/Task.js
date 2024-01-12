@@ -58,6 +58,7 @@ const Task = ({data , next , back , fetchtodos }) => {
        }
         window.addEventListener('click' , handleClick) 
 
+   
      
     },[])
     
